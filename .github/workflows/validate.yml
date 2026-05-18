@@ -1,0 +1,15 @@
+name: Validacion ShellCheck
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  comprobar-script:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Descargar el codigo del repositorio
+        uses: actions/checkout@v4
+
+      - name: Ejecutar ShellCheck
+        run: shellcheck script.sh
